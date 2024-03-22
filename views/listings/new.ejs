@@ -1,0 +1,107 @@
+<% layout("/layouts/boilerplate") %>
+<!-- ye syntax Express.js ke view rendering engine EJS mein istemal hota hai. Is line ka matlab hai ki hum ek specific layout file ko is page ke layout ke roop mein istemal karna chahte hain-->
+<div class="row mt-3">
+  <!-- Ye ek row hai Bootstrap mein, ye upar se 3 units ka gap le rahi hai -->
+  <div class="col-8 offset-2">
+    <!-- Ye ek column hai jo 8 units ka hai aur 2 units ka offset hai -->
+    <!-- <br /><br /> -->
+    <!-- Ye do break lines hain, jo abhi comment mein hain matlab ye display nahi honge -->
+    <h3>Create a new listings</h3>
+    <!-- Ye heading hai jo kehta hai "Naya listing banaye" -->
+
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+      <!-- Ye form hai jismein hum naye listing banayenge aur POST request bhejenge "/listings" pe -->
+
+      <div class="mb-3">
+        <!-- Ye ek form group hai Title ke liye -->
+        <label for="title" class="form-label">Title</label>
+        <!-- Ye label hai jo Title input ke liye hai -->
+        <input
+          name="listing[title]"
+          placeholder="Enter a Catchy Title"
+          type="text"
+          class="form-control"
+          required
+        />
+        <!-- Ye input field hai jismein hum Title daalenge -->
+        <div class="valid-feedback">Title looks Good!</div>
+      </div>
+
+      <div class="mb-3">
+        <!-- Ye ek form group hai Description ke liye -->
+        <label for="title" class="form-label">Description</label>
+        <!-- Ye label hai jo Description textarea ke liye hai -->
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          required
+        ></textarea>
+        <!-- Ye textarea hai jismein hum Description daalenge -->
+        <div class="invalid-feedback">Please enter a short description</div>
+      </div>
+
+      <div class="mb-3">
+        <!-- Ye ek form group hai Image Link ke liye -->
+        <label for="image" class="form-label">Image Link</label>
+        <!-- Ye label hai jo Image Link input ke liye hai -->
+        <input
+          name="listing[image]"
+          placeholder="enter image URL/link"
+          class="form-control"
+        />
+        <!-- Ye input field hai jismein hum Image Link daalenge -->
+      </div>
+
+      <div class="row">
+        <!-- Ye ek nested row hai Price, Country, aur Location ke liye -->
+        <div class="mb-3 col-md-4">
+          <!-- Ye ek column hai Price ke liye -->
+          <label for="price" class="form-label">Price</label>
+          <!-- Ye label hai jo Price input ke liye hai -->
+          <input
+            name="listing[price]"
+            placeholder="1200"
+            type="number"
+            class="form-control"
+            required
+          />
+          <!-- Ye input field hai jismein hum Price daalenge -->
+          <div class="invalid-feedback">Please enter a valid Price</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <!-- Ye ek column hai Country ke liye -->
+          <label for="country" class="form-label">Country</label>
+          <!-- Ye label hai jo Country input ke liye hai -->
+          <input
+            name="listing[country]"
+            placeholder="India"
+            type="text"
+            class="form-control"
+            required
+          />
+          <!-- Ye input field hai jismein hum Country daalenge -->
+          <div class="invalid-feedback">Please enter a valid Country</div>
+        </div>
+
+        <div class="mb-3">
+          <!-- Ye ek form group hai Location ke liye -->
+          <label for="location" class="form-label">Location</label>
+          <!-- Ye label hai jo Location input ke liye hai -->
+          <input
+            name="listing[location]"
+            placeholder="Jaipur, Rajasthan"
+            type="text"
+            class="form-control"
+            required
+          />
+          <!-- Ye input field hai jismein hum Location daalenge -->
+          <div class="invalid-feedback">Please enter a valid Location</div>
+        </div>
+      </div>
+
+      <button class="btn btn-dark add-btn mt-3">Add</button>
+      <!-- Ye button hai jo form ko submit karega -->
+    </form>
+  </div>
+</div>
